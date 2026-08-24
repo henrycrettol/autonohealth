@@ -58,7 +58,7 @@ const firebaseConfig = {
 
 /* Public reCAPTCHA Enterprise site key used by Firebase App Check. Add it only
    after registering the web app in Firebase Console. It is not a secret. */
-const APP_CHECK_SITE_KEY = "";
+const APP_CHECK_SITE_KEY = "6LfwrpUtAAAAAMrTJ1X62v1oSHn6zN7JIOhxc3A0";
 
 export const app = initializeApp(firebaseConfig);
 export const appCheck = APP_CHECK_SITE_KEY
