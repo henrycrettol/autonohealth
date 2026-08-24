@@ -12,6 +12,8 @@ AutonoHealth is an independent product design and engineering project exploring 
 
 > AutonoHealth provides general educational information. It does not diagnose, prescribe, or replace care from a qualified healthcare professional.
 
+> **Portfolio review:** Explore the live web beta at [autonohealth.com](https://autonohealth.com). Please use fictional, non-sensitive information when testing account and tracker features. AutonoHealth is not represented as HIPAA-compliant and should not be used to store real medical records or protected health information.
+
 ## Product overview
 
 The web experience connects four ideas that are often fragmented across different products:
