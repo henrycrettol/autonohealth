@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Transparent health calculators and practical planning tools that explain their assumptions and limitations.">
+  <meta name="theme-color" content="#0c2342">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <title>Tools | AutonoHealth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css?v=20260823-pomodoro-1">
+</head>
+<body data-page="tools">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  
+    <div class="utility-bar">
+      <div class="container utility-inner">
+        <span>Evidence-based education—not diagnosis or personalized medical care.</span>
+        <span><a href="evidence.html">See how evidence ratings work →</a></span>
+      </div>
+    </div>
+    <header class="site-header">
+      <div class="container navbar">
+        
+        <a class="brand brand-image-link" href="index.html" aria-label="AutonoHealth home">
+          <img
+            class="brand-image"
+            src="assets/ah-logo-header.png"
+            alt="AutonoHealth"
+          >
+        </a>
+        <nav class="nav-links" data-primary-nav aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+<a href="conditions.html">Conditions</a>
+<a href="treatments.html">Treatments</a>
+<a href="learn.html">Learn</a>
+<a href="track.html">Track</a>
+<a href="tools.html" class="active" aria-current="page">Tools</a>
+<a href="shop.html">Shop</a>
+<a href="about.html">About</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="icon-button" type="button" data-search-open aria-label="Search AutonoHealth">
+            <span class="search-glyph" aria-hidden="true"></span>
+          </button>
+          <a class="button button-primary" href="#otto-chat" data-otto-open>Ask Otto</a>
+          <button class="menu-button" type="button" data-menu-toggle aria-label="Open navigation" aria-expanded="false">
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </div>
+    </header>
+  <main id="main">
+    
+  
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <span class="eyebrow">Practical tools</span>
+          <h1>Useful calculations and planning aids — with assumptions shown.</h1>
+          <p>A health tool should explain what it can estimate, what it cannot determine, and when professional interpretation matters. These interactive examples run only in your browser.</p>
+        </div>
+        <img class="page-hero-art" src="assets/otto-tools-v2.png" alt="Otto holding a health-planning checklist">
+      </div>
+    </section>
+  <section class="section section-white">
+    <div class="container">
+      <nav class="tools-jump-nav" aria-label="Health tool categories">
+        <span>Jump to</span>
+        <a href="#quick-calculators">Quick calculators</a>
+        <a href="#medication-organization">Medication organization</a>
+        <a href="#visit-preparation">Visit preparation</a>
+        <a href="#advanced-clinical-tools">Advanced tools</a>
+      </nav>
+
+      <section class="tool-category" id="quick-calculators" aria-labelledby="quick-calculators-title">
+        <div class="tool-category-heading">
+          <div><span class="eyebrow">Quick calculators</span><h2 id="quick-calculators-title">Explore a number—with its limitations visible.</h2><p>Open only the calculator you need. Each result explains the assumptions that shape the estimate.</p></div>
+        </div>
+        <div class="tool-grid tool-grid-compact">
+          <details class="tool-card tool-disclosure reveal" id="bmi-calculator">
+            <summary><span class="tool-summary-layout"><span class="card-icon" aria-hidden="true">BMI</span><span class="tool-summary-copy"><span class="card-kicker">General screening</span><span class="tool-summary-title" role="heading" aria-level="3">BMI calculator</span><span class="tool-summary-description">Estimate body mass index from height and weight.</span></span><span class="tool-disclosure-action" aria-hidden="true"></span></span></summary>
+            <div class="tool-disclosure-content"><form id="bmi-form">
+              <div class="field-grid"><div class="field"><label for="bmi-feet">Height · feet</label><input id="bmi-feet" type="number" min="1" max="8" placeholder="5" required></div><div class="field"><label for="bmi-inches">Height · inches</label><input id="bmi-inches" type="number" min="0" max="11" placeholder="10" required></div></div>
+              <div class="field"><label for="bmi-pounds">Weight · pounds</label><input id="bmi-pounds" type="number" min="1" step="0.1" placeholder="165" required></div>
+              <button class="button button-primary" type="submit">Calculate BMI</button><div class="result-box" id="bmi-result" role="status">Enter height and weight to see an educational estimate.</div><div class="tool-disclaimer">BMI does not directly measure body composition or overall health. This is not a diagnosis, and interpretation may differ across age, pregnancy, athletic build, body composition, and clinical context.</div>
+            </form></div>
+          </details>
+
+          <details class="tool-card tool-disclosure reveal" id="sleep-debt-calculator">
+            <summary><span class="tool-summary-layout"><span class="card-icon" aria-hidden="true">Zz</span><span class="tool-summary-copy"><span class="card-kicker">Sleep planning</span><span class="tool-summary-title" role="heading" aria-level="3">Sleep debt calculator</span><span class="tool-summary-description">Compare recent sleep with your chosen nightly target.</span></span><span class="tool-disclosure-action" aria-hidden="true"></span></span></summary>
+            <div class="tool-disclosure-content"><form id="sleep-debt-form">
+              <div class="field-grid"><div class="field"><label for="sleep-target">Sleep target · hours/night</label><input id="sleep-target" type="number" min="3" max="12" step="0.25" placeholder="8" required></div><div class="field"><label for="sleep-actual">Average sleep · hours/night</label><input id="sleep-actual" type="number" min="0" max="12" step="0.25" placeholder="6.5" required></div></div>
+              <div class="field"><label for="sleep-nights">Number of nights</label><input id="sleep-nights" type="number" min="1" max="30" step="1" placeholder="5" required><small>Use a period that reflects a reasonably consistent recent pattern.</small></div>
+              <button class="button button-primary" type="submit">Estimate sleep debt</button><div class="result-box" id="sleep-debt-result" role="status">Enter your target, average sleep, and number of nights.</div><div class="tool-disclaimer">This is not a clinical sleep assessment or a literal hour-for-hour recovery prescription. See the <a href="https://www.cdc.gov/niosh/work-hour-training-for-nurses/longhours/mod2/12.html" target="_blank" rel="noopener">CDC/NIOSH explanation of sleep debt</a>.</div>
+            </form></div>
+          </details>
+
+          <details class="tool-card tool-disclosure reveal" id="caffeine-half-life-calculator">
+            <summary><span class="tool-summary-layout"><span class="card-icon" aria-hidden="true">½</span><span class="tool-summary-copy"><span class="card-kicker">Timing estimate</span><span class="tool-summary-title" role="heading" aria-level="3">Caffeine half-life calculator</span><span class="tool-summary-description">Estimate how much caffeine may remain over time.</span></span><span class="tool-disclosure-action" aria-hidden="true"></span></span></summary>
+            <div class="tool-disclosure-content"><form id="caffeine-form">
+              <div class="field-grid"><div class="field"><label for="caffeine-amount">Caffeine consumed · mg</label><input id="caffeine-amount" type="number" min="1" max="2000" step="1" placeholder="200" required></div><div class="field"><label for="caffeine-time">Date and time consumed</label><input id="caffeine-time" type="datetime-local" required></div></div>
+              <button class="button button-primary" type="submit">Estimate caffeine clearance</button><div class="result-box" id="caffeine-result" role="status">Enter an amount and consumption time to see an estimated timeline.</div><div class="tool-disclaimer">This is not a personalized prediction of when stimulation will wear off. Metabolism varies with pregnancy, medicines, smoking, liver health, genetics, and other factors. <a href="https://www.fda.gov/media/169548/download" target="_blank" rel="noopener">Review the FDA source</a>.</div>
+            </form></div>
+          </details>
+
+          <details class="tool-card tool-disclosure reveal" id="fasting-timer">
+            <summary><span class="tool-summary-layout"><span class="card-icon" aria-hidden="true">⏱</span><span class="tool-summary-copy"><span class="card-kicker">Routine timing</span><span class="tool-summary-title" role="heading" aria-level="3">Fasting timer</span><span class="tool-summary-description">Track elapsed time toward a fasting goal on this device.</span></span><span class="tool-disclosure-action" aria-hidden="true"></span></span></summary>
+            <div class="tool-disclosure-content">
+              <div class="field"><label for="fasting-target">Fasting goal</label><select id="fasting-target"><option value="12">12 hours</option><option value="14">14 hours</option><option value="16" selected>16 hours</option><option value="18">18 hours</option><option value="20">20 hours</option><option value="24">24 hours</option></select></div>
+              <div class="fasting-timer-display" id="fasting-timer-display" role="timer" aria-label="Elapsed fasting time">00:00:00</div>
+              <div class="fasting-progress" id="fasting-progress" role="progressbar" aria-label="Fasting goal progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="fasting-progress-bar"></span></div>
+              <div class="fasting-timer-meta"><span id="fasting-progress-label">0% of 16-hour goal</span><span id="fasting-remaining-label">16 hr remaining</span></div>
+              <div class="tool-actions fasting-timer-actions"><button class="button button-primary" type="button" id="fasting-start">Start fast</button><button class="button button-secondary" type="button" id="fasting-end" disabled>End fast</button><button class="button button-ghost" type="button" id="fasting-reset" disabled>Reset</button></div>
+              <div class="result-box" id="fasting-status" role="status" aria-live="polite">Choose a goal and start when your fast begins.</div>
+              <details class="tool-subdisclosure fasting-date-calculator">
+                <summary>Calculate a completed fast <span>Date &amp; time</span></summary>
+                <div class="tool-subdisclosure-content">
+                  <form id="fasting-duration-form">
+                    <div class="field-grid"><div class="field"><label for="fasting-calculator-start">Fast started</label><input id="fasting-calculator-start" type="datetime-local" required></div><div class="field"><label for="fasting-calculator-end">Fast ended</label><input id="fasting-calculator-end" type="datetime-local" required></div></div>
+                    <button class="button button-primary" type="submit">Calculate fasting hours</button>
+                    <div class="result-box" id="fasting-duration-result" role="status" aria-live="polite">Enter the start and end date and time.</div>
+                  </form>
+                </div>
+              </details>
+              <div class="tool-disclaimer">This timer is an organizational aid, not a recommendation to fast. Fasting may be unsafe with pregnancy, a history of an eating disorder, diabetes, certain medicines, or some medical conditions. Ask a qualified healthcare professional what is appropriate for you, and stop if you feel unwell.</div>
+            </div>
+          </details>
+
+          <details class="tool-card tool-disclosure reveal" id="pomodoro-timer">
+            <summary><span class="tool-summary-layout"><span class="card-icon" aria-hidden="true">25</span><span class="tool-summary-copy"><span class="card-kicker">Focus and recovery</span><span class="tool-summary-title" role="heading" aria-level="3">Pomodoro timer</span><span class="tool-summary-description">Alternate focused work with short, intentional breaks.</span></span><span class="tool-disclosure-action" aria-hidden="true"></span></span></summary>
+            <div class="tool-disclosure-content">
+              <div class="pomodoro-modes" role="group" aria-label="Timer interval">
+                <button class="pomodoro-mode active" type="button" data-pomodoro-mode="focus" aria-pressed="true">Focus <span>25 min</span></button>
+                <button class="pomodoro-mode" type="button" data-pomodoro-mode="shortBreak" aria-pressed="false">Short break <span>5 min</span></button>
+                <button class="pomodoro-mode" type="button" data-pomodoro-mode="longBreak" aria-pressed="false">Long break <span>15 min</span></button>
+              </div>
+              <div class="pomodoro-timer-display" id="pomodoro-timer-display" role="timer" aria-label="25 minutes remaining">25:00</div>
+              <div class="pomodoro-progress" id="pomodoro-progress" role="progressbar" aria-label="Current interval progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="pomodoro-progress-bar"></span></div>
+              <div class="pomodoro-session-meta"><span id="pomodoro-mode-label">Focus interval</span><span id="pomodoro-session-count">0 of 4 focus sessions</span></div>
+              <div class="tool-actions pomodoro-actions"><button class="button button-primary" type="button" id="pomodoro-start">Start focus</button><button class="button button-secondary" type="button" id="pomodoro-pause" disabled>Pause</button><button class="button button-ghost" type="button" id="pomodoro-reset">Reset</button></div>
+              <div class="result-box pomodoro-status" id="pomodoro-status" role="status" aria-live="polite">Start a 25-minute focus interval. Your progress stays on this device.</div>
+              <div class="tool-disclaimer">The classic rhythm is 25 minutes of focus followed by a 5-minute break, with a longer break after four focus sessions. Pause or change intervals whenever you need to.</div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="tool-category" id="medication-organization" aria-labelledby="medication-organization-title">
+        <div class="tool-category-heading"><div><span class="eyebrow">Medication organization</span><h2 id="medication-organization-title">Keep the instructions you already have in one place.</h2><p>Create a local schedule that can flow directly into your visit plan.</p></div></div>
+        <div class="tool-grid">
+          <details class="tool-card tool-card-wide tool-disclosure reveal" id="medication-schedule">
+            <summary><span class="tool-summary-layout"><span class="card-icon" aria-hidden="true">Rx</span><span class="tool-summary-copy"><span class="card-kicker">Stored in this browser</span><span class="tool-summary-title" role="heading" aria-level="3">Medication schedule</span><span class="tool-summary-description">Organize medicine names, doses, timing, instructions, notes, and refill dates.</span></span><span class="tool-disclosure-action" aria-hidden="true"></span></span></summary>
+            <div class="tool-disclosure-content">
+              <form id="medication-schedule-form">
+                <div class="field-grid"><div class="field"><label for="schedule-name">Medication name</label><input id="schedule-name" maxlength="80" placeholder="Example: Lisinopril" required></div><div class="field"><label for="schedule-dose">Dose and form</label><input id="schedule-dose" maxlength="80" placeholder="Example: 10 mg tablet"></div></div>
+                <div class="field-grid"><div class="field"><label for="schedule-time">Usual time</label><input id="schedule-time" type="time"><small>Leave blank if there is no fixed time.</small></div><div class="field"><label for="schedule-frequency">Frequency</label><select id="schedule-frequency"><option>Once daily</option><option>Twice daily</option><option>Three times daily</option><option>Weekly</option><option>As needed</option><option>Other / as directed</option></select></div></div>
+                <div class="field-grid"><div class="field"><label for="schedule-instructions">Instructions</label><input id="schedule-instructions" maxlength="140" placeholder="Example: Take with breakfast"></div><div class="field"><label for="schedule-refill">Next refill date</label><input id="schedule-refill" type="date"></div></div>
+                <div class="field"><label for="schedule-notes">Question or note</label><textarea id="schedule-notes" rows="2" maxlength="300" placeholder="Example: Ask whether dizziness could be related"></textarea></div>
+                <div class="tool-actions"><button class="button button-primary" type="submit">Add to schedule</button><button class="button button-ghost" type="button" id="clear-medication-schedule">Clear schedule</button></div>
+              </form>
+              <div class="medication-schedule-list" id="medication-schedule-list" aria-live="polite"></div>
+              <div class="tool-disclaimer">Entries are stored only in this browser. Copy instructions exactly from the prescription label, and confirm uncertainties with a pharmacist or prescriber.</div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="tool-category" id="visit-preparation" aria-labelledby="visit-preparation-title">
+        <div class="tool-category-heading"><div><span class="eyebrow">Visit preparation</span><h2 id="visit-preparation-title">Prepare once. Leave with a brief and better questions.</h2><p>Enter your context one time. The tool creates a one-page visit brief plus a prioritized question list.</p></div></div>
+        <div class="visit-output-preview" aria-label="Visit plan outputs"><span><strong>1</strong> Concise visit brief</span><span><strong>2</strong> Five focused questions</span><span><strong>3</strong> Copy or print together</span></div>
+        <div class="tool-grid">
+          <details class="tool-card tool-card-wide tool-disclosure reveal" id="visit-plan">
+            <summary><span class="tool-summary-layout"><span class="card-icon" aria-hidden="true">VIS</span><span class="tool-summary-copy"><span class="card-kicker">Nothing is automatically saved or sent</span><span class="tool-summary-title" role="heading" aria-level="3">Prepare for a healthcare visit</span><span class="tool-summary-description">Best for organizing what matters, sharing useful context, and deciding what to ask first.</span></span><span class="tool-disclosure-action" aria-hidden="true"></span></span></summary>
+            <div class="tool-disclosure-content">
+              <span class="legacy-anchor" id="health-summary" aria-hidden="true"></span><span class="legacy-anchor" id="visit-question-builder" aria-hidden="true"></span>
+              <form id="visit-plan-form">
+                <div class="field-grid"><div class="field"><label for="visit-plan-topic">Main topic</label><input id="visit-plan-topic" maxlength="160" placeholder="Example: New episodes of dizziness" required></div><div class="field"><label for="visit-plan-type">Type of conversation</label><select id="visit-plan-type"><option value="symptom">New or changing symptom</option><option value="condition">Condition follow-up</option><option value="treatment">Medicine or treatment decision</option><option value="test">Test or result</option><option value="procedure">Procedure or surgery</option><option value="preventive">Checkup or prevention</option></select></div></div>
+                <div class="field-grid"><div class="field"><label for="visit-plan-goal">Main goal for the visit</label><textarea id="visit-plan-goal" rows="3" maxlength="600" placeholder="What would make this appointment useful?"></textarea></div><div class="field"><label for="visit-plan-concern">Specific concern or decision</label><textarea id="visit-plan-concern" rows="3" maxlength="800" placeholder="Example: I am worried the new medicine is causing fatigue"></textarea></div></div>
+                <div class="field"><label for="visit-plan-changes">Recent symptoms, changes, or tracked patterns</label><textarea id="visit-plan-changes" rows="3" maxlength="1200" placeholder="When it began, frequency, triggers, and what makes it better or worse"></textarea><div class="tool-actions field-actions"><button class="text-link inline-tool-link" type="button" id="visit-plan-use-tracker">Add my 14-day tracker summary</button><a class="text-link inline-tool-link" href="track.html">Open daily tracker</a></div><small>Uses the same device or signed-in account data shown on the tracker page. Nothing is sent with this plan.</small></div>
+
+                <details class="tool-subdisclosure">
+                  <summary>Add health background <span>Optional</span></summary>
+                  <div class="tool-subdisclosure-content">
+                    <div class="field-grid"><div class="field"><label for="visit-plan-name">Name or initials · optional</label><input id="visit-plan-name" maxlength="80" placeholder="Your choice"></div><div class="field"><label for="visit-plan-date">Plan date</label><input id="visit-plan-date" type="date" required></div></div>
+                    <div class="field"><label for="visit-plan-conditions">Health conditions relevant to this visit</label><textarea id="visit-plan-conditions" rows="3" maxlength="1200" placeholder="Include diagnosed conditions you want discussed"></textarea></div>
+                    <div class="field"><label for="visit-plan-medications">Medicines, supplements, or treatments to discuss</label><textarea id="visit-plan-medications" rows="4" maxlength="2400" placeholder="Names, doses, recent changes, instructions, or side effects"></textarea><button class="text-link inline-tool-link" type="button" id="visit-plan-use-schedule">Use medication schedule</button></div>
+                    <div class="field"><label for="visit-plan-allergies">Allergies or medication reactions</label><textarea id="visit-plan-allergies" rows="2" maxlength="800" placeholder="Substance and reaction, if known"></textarea></div>
+                  </div>
+                </details>
+
+                <div class="field-grid"><div class="field"><label for="visit-plan-priority">Question focus</label><select id="visit-plan-priority"><option value="balanced">Balanced overview</option><option value="understanding">Understanding what may be happening</option><option value="options">Comparing options</option><option value="safety">Safety and warning signs</option><option value="follow-up">Monitoring and next steps</option></select></div><div class="field"><label for="visit-plan-question-count">Number of questions</label><select id="visit-plan-question-count"><option value="3">3 essential questions</option><option value="5" selected>5 focused questions</option><option value="8">8 detailed questions</option></select><small>The first three are marked as priorities.</small></div></div>
+                <button class="button button-primary" type="submit">Build my visit plan</button>
+              </form>
+              <section class="health-summary-result visit-plan-result" id="visit-plan-result" aria-live="polite" hidden>
+                <div id="visit-plan-output"></div>
+                <div class="tool-actions health-summary-controls"><button class="button button-secondary" type="button" id="copy-visit-plan">Copy visit plan</button><button class="button button-ghost" type="button" id="print-visit-plan">Print visit plan</button></div>
+              </section>
+              <div class="tool-disclaimer">Review the generated plan for accuracy before sharing it. It is not a medical record, diagnosis, treatment recommendation, or substitute for a healthcare professional’s medication list. Adapt the questions to your situation and seek urgent care for emergencies. Inspired by <a href="https://www.ahrq.gov/questions/question-builder/index.html" target="_blank" rel="noopener">AHRQ</a> and <a href="https://www.nia.nih.gov/health/medical-care-and-appointments/how-prepare-doctors-appointment" target="_blank" rel="noopener">NIA</a> visit-preparation guidance.</div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="tool-category" id="advanced-clinical-tools" aria-labelledby="advanced-clinical-tools-title">
+        <div class="tool-category-heading tool-category-heading-warning"><div><span class="eyebrow">Advanced clinical tools</span><h2 id="advanced-clinical-tools-title">Use with a clinician or pharmacist.</h2><p>These calculations depend on clinical inputs and should not be used independently to make medication decisions.</p></div><span class="advanced-tool-badge">Professional interpretation needed</span></div>
+        <div class="tool-grid">
+          <details class="tool-card tool-card-wide tool-disclosure reveal" id="crcl-calculator">
+            <summary><span class="tool-summary-layout"><span class="card-icon" aria-hidden="true">CrCl</span><span class="tool-summary-copy"><span class="card-kicker">Advanced · medication-related estimate</span><span class="tool-summary-title" role="heading" aria-level="3">Creatinine clearance</span><span class="tool-summary-description">Estimate Cockcroft–Gault creatinine clearance for educational discussion—not dosing.</span></span><span class="tool-disclosure-action" aria-hidden="true"></span></span></summary>
+            <div class="tool-disclosure-content"><form id="crcl-form">
+              <div class="notice notice-warning advanced-tool-notice">Do not use this result to start, stop, or dose a medicine. Weight selection, kidney stability, laboratory method, body composition, and drug-specific guidance can materially change interpretation.</div>
+              <div class="field-grid"><div class="field"><label for="crcl-age">Age · years</label><input id="crcl-age" type="number" min="18" max="120" placeholder="68" required></div><div class="field"><label for="crcl-weight">Clinically selected weight · kg</label><input id="crcl-weight" type="number" min="1" step="0.1" placeholder="72" required></div></div>
+              <div class="field-grid"><div class="field"><label for="crcl-scr">Serum creatinine · mg/dL</label><input id="crcl-scr" type="number" min="0.1" step="0.01" placeholder="1.0" required></div><div class="field"><label for="crcl-coefficient">Traditional formula coefficient</label><select id="crcl-coefficient"><option value="1">1.00</option><option value="0.85">0.85</option></select><small>The original formula applied 0.85 to females. Current clinical use requires patient-specific interpretation.</small></div></div>
+              <button class="button button-primary" type="submit">Estimate CrCl</button><div class="result-box" id="crcl-result" role="status">Enter clinician-reviewed inputs to see an educational estimate.</div>
+            </form></div>
+          </details>
+        </div>
+      </section>
+
+      <aside class="tool-evidence-link reveal">
+        <div><span class="eyebrow">Evidence ratings</span><h2>Wondering what “strong” or “limited” really means?</h2><p>The Evidence Center explains every rating, the outcome it applies to, and why a rating is not the same as a recommendation.</p></div>
+        <a class="button button-secondary" href="evidence.html">Open the Evidence Center</a>
+      </aside>
+    </div>
+  </section>
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <span class="eyebrow eyebrow-light">A helpful next step</span>
+            <h2>A useful number should lead to a useful question.</h2>
+            <p>Use Otto to understand a tool’s assumptions, then decide whether the result belongs in a conversation with a pharmacist or other healthcare professional.</p>
+            <div class="hero-actions"><a class="button button-primary" href="#otto-chat" data-otto-open>Ask Otto</a></div>
+          </div>
+          <img src="assets/otto-thinking-clean.png" alt="Otto offering encouragement">
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            
+    <a class="brand" href="index.html" aria-label="AutonoHealth home">
+      <span class="brand-mark" aria-hidden="true">AH</span>
+      <span>Autono<span class="brand-health">Health</span></span>
+    </a>
+            <p>Clear health education, transparent evidence, practical self-management tools, and a friendly guide to help people take the next informed step.</p>
+          </div>
+          <div class="footer-column">
+            <h3>Explore</h3>
+            <div class="footer-links">
+              <a href="conditions.html">Conditions</a>
+              <a href="treatments.html">Treatments</a>
+              <a href="learn.html">Learning hub</a>
+              <a href="evidence.html">Evidence Center</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Do</h3>
+            <div class="footer-links">
+              <a href="track.html">Daily tracker</a>
+              <a href="tools.html">Health tools</a>
+              <a href="shop.html">Shop</a>
+              <a href="#otto-chat" data-otto-open>Ask Otto</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>AutonoHealth</h3>
+            <div class="footer-links">
+              <a href="about.html">About</a>
+              <a href="about.html#editorial">Editorial principles</a>
+              <a href="about.html#privacy">Privacy</a>
+              <a href="about.html#contact">Contact</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span data-current-year></span> AutonoHealth. All rights reserved.</span>
+          <span>Educational information only. Always seek qualified care for diagnosis and treatment decisions.</span>
+        </div>
+      </div>
+    </footer>
+  
+    <div class="modal-overlay" id="site-search" aria-hidden="true">
+      <section class="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-title">
+        <div class="modal-header">
+          <div>
+            <span class="card-kicker">Find your starting point</span>
+            <h2 id="search-title">Search AutonoHealth</h2>
+          </div>
+          <button class="close-button" type="button" data-search-close aria-label="Close search">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="search-field">
+            <span class="search-glyph" aria-hidden="true"></span>
+            <label class="sr-only" for="site-search-input">Search AutonoHealth</label>
+            <input id="site-search-input" type="search" placeholder="Try “blood pressure,” “melatonin,” or “mood”…" autocomplete="off">
+          </div>
+          <div class="search-results" id="site-search-results" aria-live="polite"></div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="chat-panel" id="otto-chat" aria-hidden="true" aria-label="Ask Otto demo">
+      <div class="chat-header">
+        <img src="assets/otto-hello.png" alt="">
+        <div><strong>Ask Otto</strong><small>AutonoHealth guide · prototype</small></div>
+        <button class="close-button" type="button" data-chat-close aria-label="Close Otto chat">×</button>
+      </div>
+      <div class="chat-messages" id="otto-messages" aria-live="polite">
+        <div class="chat-message otto">Hi! I’m Otto. I can help you explore conditions, compare evidence, review the demo tracker, or find the right tool.</div>
+      </div>
+      <div class="chat-suggestions" aria-label="Suggested questions">
+        <button class="chat-suggestion" type="button" data-chat-suggestion="How do evidence ratings work?">Evidence ratings</button>
+        <button class="chat-suggestion" type="button" data-chat-suggestion="Show me the sleep content">Sleep content</button>
+        <button class="chat-suggestion" type="button" data-chat-suggestion="What can I track?">Tracking</button>
+      </div>
+      <div class="chat-compose">
+        <label class="sr-only" for="otto-input">Ask Otto</label>
+        <input id="otto-input" placeholder="Ask a health education question…" autocomplete="off">
+        <button class="button button-primary button-small" type="button" id="otto-send">Send</button>
+      </div>
+      <div class="chat-privacy">Demo responses only. Otto does not diagnose, prescribe, or replace a healthcare professional.</div>
+    </aside>
+    <button class="chat-launcher" type="button" data-chat-launcher aria-label="Open Otto chat" aria-controls="otto-chat" aria-expanded="false"><video class="chat-launcher-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/otto-video.mp4" type="video/mp4"></video></button>
+    <div class="toast" id="site-toast" role="status" aria-live="polite"></div>
+  <script src="assets/app.js?v=20260823-pomodoro-1" defer></script>
+</body>
+</html>

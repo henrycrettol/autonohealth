@@ -1,0 +1,14 @@
+{
+  "name": "autonohealth-functions",
+  "description": "Server-side proxy that holds the OpenAI key for Otto.",
+  "main": "index.js",
+  "engines": { "node": "22" },
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "firebase-admin": "^14.3.0",
+    "firebase-functions": "^7.3.2"
+  },
+  "private": true
+}

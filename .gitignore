@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Firebase
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+.runtimeconfig.json
+
+# Secrets — never commit these
+.env
+.env.*
+**/.secret.local
+service-account*.json
+**/service-account*.json
+GoogleService-Info.plist
+*.pem
+*.p12
+*.mobileprovision
+
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+DerivedData/

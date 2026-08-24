@@ -1,0 +1,1034 @@
+/* ==========================================================================
+   track.css — Track page components.
+   Loaded after styles.css. Every value derives from the existing AutonoHealth
+   tokens in :root. All classes are namespaced `th-`.
+
+   Design rule for this page: one card, one list, one job. Anything that isn't
+   "log today" is either below the fold or inside a drawer.
+   ========================================================================== */
+
+.th-page {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   The card
+   -------------------------------------------------------------------------- */
+
+.th-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Header: date on the left, account on the right, progress underneath
+   -------------------------------------------------------------------------- */
+
+.th-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px 16px;
+}
+
+.th-step {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--blue-700);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease, opacity 140ms ease;
+}
+
+.th-step:hover:not(:disabled) {
+  border-color: var(--blue-500);
+  background: var(--blue-100);
+}
+
+.th-step:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.th-date {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.th-date strong {
+  display: block;
+  font-size: 1.02rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.th-date small {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.th-back {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--blue-700);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 1px solid currentColor;
+}
+
+.th-back[hidden] {
+  display: none;
+}
+
+/* --- Progress ------------------------------------------------------------- */
+
+.th-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px 16px;
+}
+
+.th-bar {
+  flex: 1 1 auto;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--blue-100);
+  overflow: hidden;
+}
+
+.th-bar i {
+  display: block;
+  height: 100%;
+  width: var(--fill, 0%);
+  border-radius: 999px;
+  background: var(--blue-600);
+  transition: width 320ms cubic-bezier(0.22, 0.61, 0.36, 1), background 320ms ease;
+}
+
+.th-bar[data-complete="true"] i {
+  background: var(--green);
+}
+
+.th-count {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Account control — one button, two states, one popover
+   -------------------------------------------------------------------------- */
+
+.th-account {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.th-avatar-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease, color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.th-avatar-button .th-face {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+}
+
+/* --- Signed out: this is asking for something, so it looks like it --------- */
+
+.th-avatar-button[data-state="out"] {
+  padding: 0 14px;
+  border: 1px solid transparent;
+  background: var(--blue-600);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(49, 95, 196, 0.28);
+}
+
+.th-avatar-button[data-state="out"]:hover,
+.th-avatar-button[data-state="out"][aria-expanded="true"] {
+  background: var(--blue-700);
+  box-shadow: 0 3px 14px rgba(49, 95, 196, 0.38);
+  transform: translateY(-1px);
+}
+
+/* Three slow rings on arrival, then it stops. Enough to be seen, not nagging.
+   The 1s delay lets a returning user's session resolve first, so they never
+   see this state flash before their avatar loads. */
+.th-avatar-button[data-state="out"]::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border: 2px solid var(--blue-500);
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  animation: th-nudge 2.4s ease-out 1s 3;
+}
+
+@keyframes th-nudge {
+  0% { opacity: 0.6; transform: scale(1); }
+  70%, 100% { opacity: 0; transform: scale(1.3); }
+}
+
+/* --- Signed in: quiet. The job is done; stop competing for attention. ------ */
+
+.th-avatar-button[data-state="in"] {
+  padding: 0 6px 0 12px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+}
+
+.th-avatar-button[data-state="in"]:hover,
+.th-avatar-button[data-state="in"][aria-expanded="true"] {
+  border-color: var(--blue-300);
+  color: var(--blue-700);
+}
+
+.th-avatar-button[data-state="in"] .th-face {
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--blue-100);
+  color: var(--blue-700);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.th-avatar-button[data-state="in"] .th-face img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.th-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 60;
+  width: 288px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+}
+
+.th-popover[hidden] {
+  display: none;
+}
+
+.th-popover h4 {
+  margin: 0 0 4px;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.th-popover p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.th-popover-id {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.th-popover-id img {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.th-popover-id div {
+  min-width: 0;
+}
+
+.th-popover-id strong {
+  display: block;
+  font-size: 0.86rem;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.th-popover-id small {
+  display: block;
+  color: var(--muted-2);
+  font-size: 0.74rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.th-popover menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.th-popover menu button {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 9px;
+  background: none;
+  color: var(--ink);
+  text-align: left;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+
+.th-popover menu button:hover,
+.th-popover menu button:focus-visible {
+  background: var(--blue-050);
+}
+
+.th-popover menu hr {
+  height: 1px;
+  margin: 8px 2px;
+  border: 0;
+  background: var(--line);
+}
+
+.th-popover .th-danger {
+  color: var(--coral);
+}
+
+.th-popover .th-danger:hover,
+.th-popover .th-danger:focus-visible {
+  background: var(--coral-bg);
+}
+
+/* Google's button, used once, where it belongs. */
+.th-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 16px;
+  border: 1px solid #dadce0;
+  border-radius: 10px;
+  background: #fff;
+  color: #3c4043;
+  font-family: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 140ms ease, box-shadow 140ms ease;
+}
+
+.th-google:hover:not(:disabled) {
+  background: #f8faff;
+  box-shadow: var(--shadow-sm);
+}
+
+.th-google:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+/* --------------------------------------------------------------------------
+   The list — flat rows on hairlines, not a stack of boxes
+   -------------------------------------------------------------------------- */
+
+.th-list {
+  border-top: 1px solid var(--line);
+}
+
+.th-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.th-row {
+  display: grid;
+  grid-template-columns: 30px minmax(96px, 1fr) minmax(140px, 1.15fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 20px;
+  transition: background 140ms ease;
+}
+
+.th-item:hover .th-row {
+  background: var(--blue-050);
+}
+
+.th-glyph {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--blue-100);
+  color: var(--blue-700);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.th-item[data-logged="true"] .th-glyph {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.th-name {
+  min-width: 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.th-name small {
+  display: block;
+  color: var(--muted-2);
+  font-size: 0.73rem;
+  font-weight: 500;
+}
+
+.th-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.th-input input[type="text"],
+.th-input input[type="number"],
+.th-input select {
+  width: 100%;
+  min-width: 0;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.85rem;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.th-input input:focus,
+.th-input select:focus {
+  outline: none;
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 3px var(--blue-100);
+}
+
+.th-input input::placeholder {
+  color: var(--muted-2);
+}
+
+.th-unit {
+  flex: 0 0 auto;
+  color: var(--muted-2);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.th-tail {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Completion mark — indicates data was entered, never whether it was "good". */
+.th-mark {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--blue-150);
+  border-radius: 7px;
+  background: var(--surface);
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.th-item[data-logged="true"] .th-mark {
+  border-color: var(--green);
+  background: var(--green);
+}
+
+.th-item[data-logged="true"] .th-mark::after {
+  content: "✓";
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.th-expand {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--muted-2);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: background 140ms ease, color 140ms ease, transform 200ms ease;
+}
+
+.th-expand:hover {
+  background: var(--blue-100);
+  color: var(--blue-700);
+}
+
+.th-expand[aria-expanded="true"] {
+  transform: rotate(180deg);
+  color: var(--blue-700);
+}
+
+/* --- Mood: five inline dots ---------------------------------------------- */
+
+.th-scale {
+  display: flex;
+  gap: 5px;
+}
+
+.th-dot {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+.th-dot:hover {
+  border-color: var(--blue-500);
+  background: var(--blue-100);
+}
+
+.th-dot[aria-pressed="true"] {
+  border-color: var(--blue-600);
+  background: var(--blue-600);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* --- Sleep: slider that reads "not logged" until touched ------------------ */
+
+.th-slider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.th-slider input[type="range"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  accent-color: var(--blue-600);
+}
+
+.th-item[data-logged="false"] .th-slider input[type="range"] {
+  accent-color: var(--muted-2);
+  opacity: 0.6;
+}
+
+.th-readout {
+  flex: 0 0 auto;
+  min-width: 58px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: var(--blue-100);
+  color: var(--blue-700);
+  text-align: center;
+  font-size: 0.74rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.th-item[data-logged="false"] .th-readout {
+  background: #eef2f7;
+  color: var(--muted-2);
+}
+
+/* --------------------------------------------------------------------------
+   Row drawer — 30-day history plus the controls that used to clutter the row
+   -------------------------------------------------------------------------- */
+
+.th-drawer {
+  padding: 0 20px 18px 64px;
+  background: var(--blue-050);
+  border-top: 1px dashed var(--line);
+}
+
+.th-drawer[hidden] {
+  display: none;
+}
+
+.th-drawer-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0 10px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.th-drawer-title b {
+  color: var(--navy-900);
+  font-size: 0.86rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* Sparkline: one column per day, oldest left */
+.th-spark {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 46px;
+  margin-bottom: 12px;
+}
+
+.th-spark span {
+  flex: 1 1 0;
+  min-width: 0;
+  height: var(--h, 4%);
+  min-height: 3px;
+  border-radius: 2px;
+  background: var(--blue-500);
+  transition: background 140ms ease;
+}
+
+.th-spark span[data-empty="true"] {
+  height: 3px;
+  background: #dfe6ef;
+}
+
+.th-spark span[data-value="yes"] { background: var(--green); }
+.th-spark span[data-value="no"] { background: var(--coral); }
+.th-spark span[data-today="true"] { background: var(--navy-900); }
+
+.th-notes {
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.th-notes li {
+  display: flex;
+  gap: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.th-notes li:last-child {
+  border-bottom: 0;
+}
+
+.th-notes time {
+  flex: 0 0 82px;
+  color: var(--muted-2);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.th-drawer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.th-mini {
+  padding: 5px 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 140ms ease, color 140ms ease, background 140ms ease;
+}
+
+.th-mini:hover:not(:disabled) {
+  border-color: var(--blue-300);
+  color: var(--blue-700);
+}
+
+.th-mini:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.th-mini.th-danger:hover:not(:disabled) {
+  border-color: var(--coral);
+  color: var(--coral);
+  background: var(--coral-bg);
+}
+
+/* --------------------------------------------------------------------------
+   Add row — collapsed by default, becomes a form on click
+   -------------------------------------------------------------------------- */
+
+.th-add-toggle {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 14px 20px;
+  border: 0;
+  background: none;
+  color: var(--blue-700);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: background 140ms ease;
+}
+
+.th-add-toggle:hover {
+  background: var(--blue-050);
+}
+
+.th-add-toggle span:first-child {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--blue-300);
+  border-radius: 9px;
+  font-size: 1rem;
+}
+
+.th-add-form {
+  padding: 4px 20px 20px;
+  background: var(--blue-050);
+  border-top: 1px solid var(--line);
+}
+
+.th-add-form[hidden] {
+  display: none;
+}
+
+.th-add-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 10px;
+  padding-top: 16px;
+}
+
+.th-add-grid.has-unit {
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr) minmax(0, 0.7fr) auto;
+}
+
+.th-add-grid label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.th-add-grid input,
+.th-add-grid select {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  font-size: 0.85rem;
+}
+
+.th-add-grid input:focus,
+.th-add-grid select:focus {
+  outline: none;
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 3px var(--blue-100);
+}
+
+.th-feedback {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  min-height: 1.2em;
+}
+
+/* --------------------------------------------------------------------------
+   Footer strip inside the card
+   -------------------------------------------------------------------------- */
+
+.th-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 13px 20px;
+  border-top: 1px solid var(--line);
+  background: #fcfdff;
+}
+
+.th-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted-2);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.th-status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.th-status[data-state="saving"] { color: var(--blue-700); }
+.th-status[data-state="saving"] i { animation: th-pulse 1s ease-in-out infinite; }
+.th-status[data-state="saved"] { color: var(--green); }
+.th-status[data-state="error"] { color: var(--coral); }
+
+@keyframes th-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* --------------------------------------------------------------------------
+   Zoom-out card: 30 days at a glance
+   -------------------------------------------------------------------------- */
+
+.th-overview {
+  margin-top: 20px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.th-overview h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.th-overview > p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.th-ribbon {
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.th-cell {
+  aspect-ratio: 1;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: #eef2f7;
+  cursor: pointer;
+  transition: transform 130ms ease;
+}
+
+.th-cell:hover { transform: scale(1.22); }
+.th-cell[data-tier="1"] { background: var(--blue-150); }
+.th-cell[data-tier="2"] { background: var(--blue-300); }
+.th-cell[data-tier="3"] { background: var(--blue-600); }
+.th-cell[data-tier="4"] { background: var(--green); }
+
+.th-cell[data-current="true"] {
+  border-color: var(--navy-900);
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 3px var(--navy-900);
+}
+
+.th-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted-2);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.th-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: block;
+}
+
+.th-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.th-stat strong {
+  display: block;
+  color: var(--navy-900);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.th-stat strong span {
+  color: var(--muted-2);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.th-stat small {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Empty and loading states
+   -------------------------------------------------------------------------- */
+
+.th-skeleton {
+  height: 52px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(90deg, var(--blue-050), var(--blue-100), var(--blue-050));
+  background-size: 200% 100%;
+  animation: th-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes th-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.th-blank {
+  padding: 26px 20px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — the row reflows to two lines rather than crushing the input
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 620px) {
+  .th-row {
+    grid-template-columns: 30px 1fr auto;
+    grid-template-areas:
+      "glyph name tail"
+      ".     input input";
+    row-gap: 10px;
+  }
+
+  .th-glyph { grid-area: glyph; }
+  .th-name  { grid-area: name; }
+  .th-input { grid-area: input; }
+  .th-tail  { grid-area: tail; }
+
+  .th-drawer { padding-left: 20px; }
+
+  .th-ribbon { grid-template-columns: repeat(15, 1fr); }
+
+  .th-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .th-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .th-add-grid,
+  .th-add-grid.has-unit {
+    grid-template-columns: 1fr;
+  }
+
+  .th-popover {
+    width: min(288px, calc(100vw - 40px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .th-cell:hover { transform: none; }
+  .th-bar i { transition: none; }
+  .th-expand { transition: none; }
+  .th-status[data-state="saving"] i,
+  .th-skeleton { animation: none; }
+  .th-avatar-button[data-state="out"]::after { animation: none; }
+  .th-avatar-button[data-state="out"]:hover { transform: none; }
+}

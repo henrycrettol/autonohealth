@@ -1,0 +1,116 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* AutonoHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000001 /* AutonoHealthApp.swift */; };
+		A10000000000000000000002 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000002 /* RootTabView.swift */; };
+		A10000000000000000000003 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000003 /* Brand.swift */; };
+		A10000000000000000000004 /* HealthCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000004 /* HealthCondition.swift */; };
+		A10000000000000000000005 /* TrackerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000005 /* TrackerModels.swift */; };
+		A10000000000000000000006 /* ConditionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000006 /* ConditionRepository.swift */; };
+		A10000000000000000000007 /* TrackerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000007 /* TrackerStore.swift */; };
+		A10000000000000000000008 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000008 /* HomeView.swift */; };
+		A10000000000000000000009 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000009 /* ExploreView.swift */; };
+		A1000000000000000000000A /* ConditionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000A /* ConditionDetailView.swift */; };
+		A1000000000000000000000B /* TrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000B /* TrackerView.swift */; };
+		A1000000000000000000000C /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000C /* ToolsView.swift */; };
+		A1000000000000000000000D /* OttoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000D /* OttoView.swift */; };
+		A1000000000000000000000E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000E /* Assets.xcassets */; };
+		A1000000000000000000000F /* TrackerStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000F /* TrackerStoreTests.swift */; };
+		A10000000000000000000010 /* ConditionRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000010 /* ConditionRepositoryTests.swift */; };
+		A10000000000000000000011 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10000000000000000000013 /* XCTest.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C10000000000000000000001 = {isa = PBXContainerItemProxy; containerPortal = E10000000000000000000001 /* Project object */; proxyType = 1; remoteGlobalIDString = D10000000000000000000001; remoteInfo = AutonoHealth; };
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B10000000000000000000001 /* AutonoHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutonoHealthApp.swift; sourceTree = "<group>"; };
+		B10000000000000000000002 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		B10000000000000000000003 /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		B10000000000000000000004 /* HealthCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCondition.swift; sourceTree = "<group>"; };
+		B10000000000000000000005 /* TrackerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerModels.swift; sourceTree = "<group>"; };
+		B10000000000000000000006 /* ConditionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionRepository.swift; sourceTree = "<group>"; };
+		B10000000000000000000007 /* TrackerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerStore.swift; sourceTree = "<group>"; };
+		B10000000000000000000008 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B10000000000000000000009 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		B1000000000000000000000A /* ConditionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionDetailView.swift; sourceTree = "<group>"; };
+		B1000000000000000000000B /* TrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerView.swift; sourceTree = "<group>"; };
+		B1000000000000000000000C /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
+		B1000000000000000000000D /* OttoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OttoView.swift; sourceTree = "<group>"; };
+		B1000000000000000000000E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B1000000000000000000000F /* TrackerStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerStoreTests.swift; sourceTree = "<group>"; };
+		B10000000000000000000010 /* ConditionRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionRepositoryTests.swift; sourceTree = "<group>"; };
+		B10000000000000000000011 /* AutonoHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutonoHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10000000000000000000012 /* AutonoHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutonoHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10000000000000000000013 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = System/Library/Frameworks/XCTest.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F10000000000000000000001 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		F10000000000000000000002 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000011 /* XCTest.framework in Frameworks */,); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		G10000000000000000000001 = {isa = PBXGroup; children = (G10000000000000000000002 /* AutonoHealth */, G1000000000000000000000D /* AutonoHealthTests */, G1000000000000000000000E /* Products */, B10000000000000000000013 /* XCTest.framework */,); sourceTree = "<group>"; };
+		G10000000000000000000002 /* AutonoHealth */ = {isa = PBXGroup; children = (G10000000000000000000003 /* App */, G10000000000000000000004 /* DesignSystem */, G10000000000000000000005 /* Models */, G10000000000000000000006 /* Data */, G10000000000000000000007 /* Views */, G1000000000000000000000C /* Resources */,); path = AutonoHealth; sourceTree = "<group>"; };
+		G10000000000000000000003 /* App */ = {isa = PBXGroup; children = (B10000000000000000000001, B10000000000000000000002,); path = App; sourceTree = "<group>"; };
+		G10000000000000000000004 /* DesignSystem */ = {isa = PBXGroup; children = (B10000000000000000000003,); path = DesignSystem; sourceTree = "<group>"; };
+		G10000000000000000000005 /* Models */ = {isa = PBXGroup; children = (B10000000000000000000004, B10000000000000000000005,); path = Models; sourceTree = "<group>"; };
+		G10000000000000000000006 /* Data */ = {isa = PBXGroup; children = (B10000000000000000000006, B10000000000000000000007,); path = Data; sourceTree = "<group>"; };
+		G10000000000000000000007 /* Views */ = {isa = PBXGroup; children = (G10000000000000000000008, G10000000000000000000009, G1000000000000000000000A, G1000000000000000000000B, G1000000000000000000000F,); path = Views; sourceTree = "<group>"; };
+		G10000000000000000000008 /* Home */ = {isa = PBXGroup; children = (B10000000000000000000008,); path = Home; sourceTree = "<group>"; };
+		G10000000000000000000009 /* Explore */ = {isa = PBXGroup; children = (B10000000000000000000009, B1000000000000000000000A,); path = Explore; sourceTree = "<group>"; };
+		G1000000000000000000000A /* Tracker */ = {isa = PBXGroup; children = (B1000000000000000000000B,); path = Tracker; sourceTree = "<group>"; };
+		G1000000000000000000000B /* Tools */ = {isa = PBXGroup; children = (B1000000000000000000000C,); path = Tools; sourceTree = "<group>"; };
+		G1000000000000000000000C /* Resources */ = {isa = PBXGroup; children = (B1000000000000000000000E,); path = Resources; sourceTree = "<group>"; };
+		G1000000000000000000000D /* AutonoHealthTests */ = {isa = PBXGroup; children = (B1000000000000000000000F, B10000000000000000000010,); path = AutonoHealthTests; sourceTree = "<group>"; };
+		G1000000000000000000000E /* Products */ = {isa = PBXGroup; children = (B10000000000000000000011, B10000000000000000000012,); name = Products; sourceTree = "<group>"; };
+		G1000000000000000000000F /* Otto */ = {isa = PBXGroup; children = (B1000000000000000000000D,); path = Otto; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D10000000000000000000001 /* AutonoHealth */ = {isa = PBXNativeTarget; buildConfigurationList = H10000000000000000000001; buildPhases = (I10000000000000000000001, F10000000000000000000001, J10000000000000000000001,); buildRules = (); dependencies = (); name = AutonoHealth; productName = AutonoHealth; productReference = B10000000000000000000011; productType = "com.apple.product-type.application"; };
+		D10000000000000000000002 /* AutonoHealthTests */ = {isa = PBXNativeTarget; buildConfigurationList = H10000000000000000000002; buildPhases = (I10000000000000000000002, F10000000000000000000002, J10000000000000000000002,); buildRules = (); dependencies = (K10000000000000000000001,); name = AutonoHealthTests; productName = AutonoHealthTests; productReference = B10000000000000000000012; productType = "com.apple.product-type.bundle.unit-test"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E10000000000000000000001 /* Project object */ = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 1600; LastUpgradeCheck = 1600; TargetAttributes = {D10000000000000000000001 = {CreatedOnToolsVersion = 16.0;}; D10000000000000000000002 = {CreatedOnToolsVersion = 16.0; TestTargetID = D10000000000000000000001;};};}; buildConfigurationList = H10000000000000000000003; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base,); mainGroup = G10000000000000000000001; productRefGroup = G1000000000000000000000E; projectDirPath = ""; projectRoot = ""; targets = (D10000000000000000000001, D10000000000000000000002,); };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		J10000000000000000000001 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (A1000000000000000000000E,); runOnlyForDeploymentPostprocessing = 0; };
+		J10000000000000000000002 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		I10000000000000000000001 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000001, A10000000000000000000002, A10000000000000000000003, A10000000000000000000004, A10000000000000000000005, A10000000000000000000006, A10000000000000000000007, A10000000000000000000008, A10000000000000000000009, A1000000000000000000000A, A1000000000000000000000B, A1000000000000000000000C, A1000000000000000000000D,); runOnlyForDeploymentPostprocessing = 0; };
+		I10000000000000000000002 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A1000000000000000000000F, A10000000000000000000010,); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		K10000000000000000000001 = {isa = PBXTargetDependency; target = D10000000000000000000001; targetProxy = C10000000000000000000001; };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		L10000000000000000000001 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_TESTABILITY = YES; GCC_C_LANGUAGE_STANDARD = gnu17; IPHONEOS_DEPLOYMENT_TARGET = 17.0; ONLY_ACTIVE_ARCH = YES; SDKROOT = iphoneos; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)"; SWIFT_OPTIMIZATION_LEVEL = "-Onone";}; name = Debug; };
+		L10000000000000000000002 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; GCC_C_LANGUAGE_STANDARD = gnu17; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_OPTIMIZATION_LEVEL = "-O"; VALIDATE_PRODUCT = YES;}; name = Release; };
+		L10000000000000000000003 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; DEVELOPMENT_ASSET_PATHS = ""; DEVELOPMENT_TEAM = ""; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = AutonoHealth; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical"; INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES; INFOPLIST_KEY_UILaunchScreen_Generation = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MARKETING_VERSION = 0.1.0; PRODUCT_BUNDLE_IDENTIFIER = com.autonohealth.app; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2";}; name = Debug; };
+		L10000000000000000000004 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; DEVELOPMENT_TEAM = ""; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = AutonoHealth; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical"; INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES; INFOPLIST_KEY_UILaunchScreen_Generation = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MARKETING_VERSION = 0.1.0; PRODUCT_BUNDLE_IDENTIFIER = com.autonohealth.app; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2";}; name = Release; };
+		L10000000000000000000005 = {isa = XCBuildConfiguration; buildSettings = {BUNDLE_LOADER = "$(TEST_HOST)"; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; PRODUCT_BUNDLE_IDENTIFIER = com.autonohealth.app.tests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutonoHealth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AutonoHealth";}; name = Debug; };
+		L10000000000000000000006 = {isa = XCBuildConfiguration; buildSettings = {BUNDLE_LOADER = "$(TEST_HOST)"; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; PRODUCT_BUNDLE_IDENTIFIER = com.autonohealth.app.tests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutonoHealth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AutonoHealth";}; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		H10000000000000000000001 = {isa = XCConfigurationList; buildConfigurations = (L10000000000000000000003, L10000000000000000000004,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		H10000000000000000000002 = {isa = XCConfigurationList; buildConfigurations = (L10000000000000000000005, L10000000000000000000006,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		H10000000000000000000003 = {isa = XCConfigurationList; buildConfigurations = (L10000000000000000000001, L10000000000000000000002,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = E10000000000000000000001 /* Project object */;
+}
